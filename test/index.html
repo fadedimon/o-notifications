@@ -31,7 +31,10 @@
                 clearInterval(t);
                 return;
             }
-            oNotifications.createNotification(pull[0]);
+            oNotifications.createNotification({
+                title: 'New notification ' + tlimit,
+                text: 'Notification\'s text. Message and stuff or whatever'
+            });
             t1limit--;
         }, 1500);
 
@@ -41,7 +44,10 @@
                 clearInterval(t1);
                 return;
             }
-            oNotifications.createNotification(pull[1]);
+            oNotifications.createNotification({
+                title: 'Another notification ' + t1limit,
+                text: 'Notification\'s text.'
+            });
             t1limit--;
         }, 2500);
 
