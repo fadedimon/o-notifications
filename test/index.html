@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="../lib/index.js"></script>
+    <style>
+        body {
+            font-family: sans-serif;
+            background: #f5f5f5;
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+
+        var pull = [
+            {
+                title: 'New notification',
+                text: 'Notification\'s text. Message and stuff or whatever'
+            },{
+                title: 'Another notification',
+                text: 'Notification\'s text.'
+            }
+        ];
+
+        var tlimit = 50;
+        var t = setInterval(function () {
+            if (!t1limit) {
+                clearInterval(t);
+                return;
+            }
+            oNotifications.createNotification(pull[0]);
+            t1limit--;
+        }, 1500);
+
+        var t1limit = 50;
+        var t1 = setInterval(function () {
+            if (!t1limit) {
+                clearInterval(t1);
+                return;
+            }
+            oNotifications.createNotification(pull[1]);
+            t1limit--;
+        }, 2500);
+
+    </script>
+    
+</body>
+</html>
