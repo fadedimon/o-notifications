@@ -32,10 +32,20 @@
                 return;
             }
             oNotifications.createNotification({
-                title: 'New notification ' + tlimit,
-                text: 'Notification\'s text. Message and stuff or whatever'
+                content: {
+                    title: 'New notification ' + tlimit,
+                    text: 'Notification\'s text. Message and stuff or whatever'
+                },
+                onBeforeShow: function (el) {
+                    var colors = [];
+                    var i = 3;
+                    while (i--) {
+                        colors.push(Math.floor(Math.random() * 255) + 1)
+                    }
+                    el.style.background = 'rgb(' + colors.join(',') + ')';
+                }
             });
-            t1limit--;
+            tlimit--;
         }, 1500);
 
         var t1limit = 50;
@@ -52,6 +62,6 @@
         }, 2500);
 
     </script>
-    
+
 </body>
 </html>
